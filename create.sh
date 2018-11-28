@@ -14,4 +14,4 @@ create_files_on_path() {
   done
 }
 
-create_files_on_path $HOW_MUCH_FILES ./src/a/b
+create_files_on_path $HOW_MUCH_FILES ./src/child
