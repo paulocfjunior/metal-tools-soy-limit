@@ -10,7 +10,7 @@ First of all, run `npm install` in order to get the `metal-tools-soy` library an
     This example tries to compile **82** files inside the folder `src/child/`, and it finish successfuly.
 
 2. Fail case: `npm run success`
-    This example tries to compile **83** files inside the folder `src/child/`, and in this case the promise neither reject nor resolve, the process just dies and returns 0, this is the bug.
+    This example tries to compile **83** files inside the folder `src/child/`, and in this case the promise neither reject nor resolve, the Node process just dies with exit code 0, this is the bug.
 
 The piece of code which process the Soy files is:
 ```javascript
@@ -20,3 +20,5 @@ const buildSoyFiles = (src, dest, soyDeps) =>
     soy({src, dest, soyDeps, handleError}).on('end', () => resolve());
   });
 ```
+
+> Related to metal-tools-soy [issue #45](https://github.com/metal/metal-tools-soy/issues/45).
